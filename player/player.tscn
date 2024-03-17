@@ -395,8 +395,8 @@ zoom = Vector2(2.725, 2.725)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["player"]]
 position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_82dss")
-animation = &"idle"
-frame_progress = 0.193049
+animation = &"fall"
+frame_progress = 0.0974714
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 1)
@@ -415,6 +415,10 @@ position = Vector2(2, 17)
 
 [node name="tankyz" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_lwdny")
+
+[node name="coyote_jumb_timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

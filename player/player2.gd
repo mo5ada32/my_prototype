@@ -1,19 +1,19 @@
 extends CharacterBody2D
 
-const  speed = 300
-const jumb_power = -900
+@export var  speed = 300
+@export var jumb_power = -900
 
-const acc = 50 
-const friction = 70
+@export var acc = 50 
+@export var friction = 70
 
-const gravity = 100
+@export var gravity = 100
 
-const max_jumb = 2
+@export var max_jumb = 2
 
 var  current_jumb = 1
 
 @onready var animation_player = $AnimatedSprite2D
-
+@onready var coyote_jumb_timer = $coyote_jumb_timer
 func _physics_process(delta):
 	var input_dir: Vector2 = input()
 	var input_axe = Input.get_axis("ui_left", "ui_right")
@@ -22,10 +22,13 @@ func _physics_process(delta):
 		
 	else :
 		add_friction()
-		
-	play_animachin(input_axe)
-	player_movement()
 	jumb()
+	play_animachin(input_axe)
+	var was_on_floor = is_on_floor()
+	player_movement()
+	var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
+	if just_left_ledge:
+		coyote_jumb_timer.start()
 	pass
 
 func input() -> Vector2:
@@ -55,6 +58,7 @@ func play_animachin(in_put_axe):
 	
 	if not is_on_floor():
 		animation_player.play("jumb")
+		
 
 func jumb():
 	if Input.is_action_just_pressed("ui_up"):
@@ -66,5 +70,5 @@ func jumb():
 		velocity.y += gravity
 		
 	
-	if is_on_floor():
+	if is_on_floor() or coyote_jumb_timer.time_left > 0.0:
 		current_jumb = 1
