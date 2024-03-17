@@ -11,14 +11,27 @@ config_version=5
 [application]
 
 config/name="game_to_be_pro"
+run/main_scene="res://player/player.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[debug]
+
+gdscript/warnings/unused_parameter=0
 
 [display]
 
 window/size/viewport_width=320
 window/size/viewport_height=180
+window/size/always_on_top=true
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="viewport"
+
+[editor]
+
+movie_writer/mjpeg_quality=1.0
+movie_writer/movie_file="C:/Users/pc/Documents/game_to_be_pro/my_prototype/movie/movie2.avi"
 
 [rendering]
 

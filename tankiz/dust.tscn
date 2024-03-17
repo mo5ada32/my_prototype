@@ -11,6 +11,21 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Animation" id="Animation_ebbut"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_ai6yf"]
 resource_name = "banich"
 length = 0.3
@@ -33,25 +48,10 @@ tracks/1/path = NodePath("GPUParticles2D:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_ebbut"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GPUParticles2D:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7oqwq"]
@@ -64,9 +64,10 @@ _data = {
 particle_flag_disable_z = true
 radial_velocity_min = 10.0
 radial_velocity_max = 10.0
-gravity = Vector3(0, 50, 0)
+gravity = Vector3(0, -10, 0)
 
 [node name="dust" type="AnimatedSprite2D"]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_yf10c")
 animation = &"dust"
 autoplay = "dust"
@@ -82,8 +83,9 @@ autoplay = "banich"
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(0, -1)
 emitting = false
-amount = 30
+amount = 200
 process_material = SubResource("ParticleProcessMaterial_gmobf")
 texture = ExtResource("1_0vav1")
+speed_scale = 5.0
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
