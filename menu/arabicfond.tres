@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://c73aalm8ex34"]
+
+[ext_resource type="FontFile" uid="uid://4t8o1xrs5baq" path="res://menu/PixelAE-Bold.ttf" id="1_mpjq7"]
+
+[resource]
+base_font = ExtResource("1_mpjq7")

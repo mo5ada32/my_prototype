@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c662ttb2exjey"]
+
+[ext_resource type="AudioStream" uid="uid://cruxskv8o81mk" path="res://music/startuvelly-refrense-game-song-v2.mp3" id="1_862h1"]
+[ext_resource type="Script" path="res://music/music_lo3ba.gd" id="2_qln10"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_862h1")
+autoplay = true
+bus = &"music"
+script = ExtResource("2_qln10")

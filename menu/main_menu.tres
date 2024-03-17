@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bjgtgqpg84j6j"]
+
+[ext_resource type="Texture2D" uid="uid://bon6thxuknyv2" path="res://menu/manzoul.png" id="1_ijdr2"]
+[ext_resource type="Texture2D" uid="uid://b6xckeir3gruj" path="res://menu/bution_2.png" id="2_8vrm5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_03p4p"]
+texture = ExtResource("1_ijdr2")
+expand_margin_left = 20.0
+expand_margin_top = 50.0
+expand_margin_right = 20.0
+expand_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_axnx4"]
+texture = ExtResource("2_8vrm5")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a6hxs"]
+texture = ExtResource("1_ijdr2")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[resource]
+Button/colors/font_hover_color = Color(0.501961, 0.203922, 0, 1)
+Button/font_sizes/font_size = 60
+Button/styles/hover = SubResource("StyleBoxTexture_03p4p")
+Button/styles/normal = SubResource("StyleBoxTexture_axnx4")
+Button/styles/pressed = SubResource("StyleBoxTexture_a6hxs")

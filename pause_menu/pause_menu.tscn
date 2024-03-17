@@ -1,0 +1,214 @@
+[gd_scene load_steps=7 format=3 uid="uid://cc77vk3p73hda"]
+
+[ext_resource type="Script" path="res://pause_menu/pause_menu.gd" id="1_bx5jl"]
+[ext_resource type="Theme" uid="uid://dhlx0asi4lb3g" path="res://pause_menu/main_menu_pause.tres" id="1_y13xw"]
+[ext_resource type="Shader" path="res://pause_menu/pause_menu.gdshader" id="2_1ic54"]
+[ext_resource type="Texture2D" uid="uid://k0bt5oqc0m1m" path="res://pause_menu/label.png" id="3_os5oa"]
+[ext_resource type="PackedScene" uid="uid://cpg1hc6r5uafo" path="res://music/h_slider_music.tscn" id="4_w01o5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ayfa7"]
+shader = ExtResource("2_1ic54")
+shader_parameter/amount = 3.0
+
+[node name="pause menu" type="Control"]
+layout_mode = 3
+anchor_right = 1.405
+anchor_bottom = 1.418
+offset_right = -0.400146
+offset_bottom = 0.039917
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_y13xw")
+script = ExtResource("1_bx5jl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ayfa7")
+layout_mode = 0
+offset_left = -4670.0
+offset_top = -3957.0
+offset_right = 6401.0
+offset_bottom = 3440.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.0
+offset_top = -307.0
+offset_right = 259.0
+offset_bottom = 307.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("3_os5oa")
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer"]
+visible = false
+layout_mode = 2
+color = Color(0.843137, 0.701961, 0.815686, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 87
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "صوت اللعبة"
+
+[node name="HSlider_music" parent="PanelContainer/VBoxContainer/VBoxContainer2" instance=ExtResource("4_w01o5")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "التأثيرات الصوطية"
+
+[node name="HSlider_music2" parent="PanelContainer/VBoxContainer/VBoxContainer2" instance=ExtResource("4_w01o5")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "الموسيق"
+
+[node name="HSlider_music3" parent="PanelContainer/VBoxContainer/VBoxContainer2" instance=ExtResource("4_w01o5")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.407843, 0.615686, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "خروج"
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control5" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control6" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control7" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control8" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control9" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control10" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control11" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control12" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control13" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control14" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Buttonou" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.407843, 0.615686, 0.0235294, 1)
+theme_override_font_sizes/font_size = 20
+text = " قائمة الرئسية"
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control5" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control6" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control7" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control8" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control9" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control10" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control11" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control12" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control13" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control14" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.298039, 0.67451, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "استمرار"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/Buttonou" to="." method="_on_buttonou_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_button_pressed"]

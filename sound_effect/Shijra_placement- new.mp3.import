@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7tevhlug05g5"
+path="res://.godot/imported/Shijra_placement- new.mp3-2cc64f06b8dc8d4272a8566ec2c30904.mp3str"
+
+[deps]
+
+source_file="res://sound_effect/Shijra_placement- new.mp3"
+dest_files=["res://.godot/imported/Shijra_placement- new.mp3-2cc64f06b8dc8d4272a8566ec2c30904.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

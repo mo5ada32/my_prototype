@@ -1,0 +1,47 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dhlx0asi4lb3g"]
+
+[ext_resource type="Texture2D" uid="uid://biy1blvq37qd" path="res://pause_menu/pution1.png" id="1_kb8kk"]
+[ext_resource type="Texture2D" uid="uid://cn36g85dkpobg" path="res://pause_menu/pution.png" id="2_bsmi8"]
+[ext_resource type="Texture2D" uid="uid://uskr2n568udt" path="res://pause_menu/ka3bpoura.png" id="3_smpk5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_03p4p"]
+texture = ExtResource("1_kb8kk")
+expand_margin_left = 20.0
+expand_margin_top = 50.0
+expand_margin_right = 20.0
+expand_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_axnx4"]
+texture = ExtResource("2_bsmi8")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 32.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrqud"]
+texture = ExtResource("1_kb8kk")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31168"]
+bg_color = Color(0.682353, 0.419608, 0.160784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvvyf"]
+bg_color = Color(0.870588, 0.423529, 0.305882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndlga"]
+border_width_top = 5
+border_color = Color(0.345098, 0.223529, 0.0627451, 1)
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxTexture_03p4p")
+Button/styles/normal = SubResource("StyleBoxTexture_axnx4")
+Button/styles/pressed = SubResource("StyleBoxTexture_nrqud")
+HSlider/icons/grabber = ExtResource("3_smpk5")
+HSlider/icons/grabber_disabled = ExtResource("3_smpk5")
+HSlider/icons/grabber_highlight = ExtResource("3_smpk5")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_31168")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_xvvyf")
+HSlider/styles/slider = SubResource("StyleBoxFlat_ndlga")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://b61adf5f4o41c"]
+
+[ext_resource type="Texture2D" uid="uid://d3ajbc2fq5euw" path="res://tree/saplig_may5ou4a.png" id="1_3e4b6"]
+
+[node name="coinshow" type="Label"]
+offset_left = 13.0
+offset_top = 14.0
+offset_right = 53.0
+offset_bottom = 44.0
+scale = Vector2(2.245, 2.245)
+theme_override_font_sizes/font_size = 20
+text = "00
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(54.343, 12.4722)
+scale = Vector2(0.411117, 0.339236)
+texture = ExtResource("1_3e4b6")
+region_enabled = true
+region_rect = Rect2(7, 0, 48, 64)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 29.3987
+offset_top = -1.3363
+offset_right = 41.3987
+offset_bottom = 28.6637
+scale = Vector2(2.245, 2.245)
+theme_override_font_sizes/font_size = 10
+text = "X"

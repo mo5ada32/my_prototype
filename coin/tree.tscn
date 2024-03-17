@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://sxh86yu2eqfc"]
+
+[ext_resource type="Script" path="res://coin/coin.gd" id="1_hrqa3"]
+[ext_resource type="Texture2D" uid="uid://d3ajbc2fq5euw" path="res://tree/saplig_may5ou4a.png" id="2_ays4y"]
+
+[sub_resource type="Gradient" id="Gradient_w1la0"]
+colors = PackedColorArray(1.20327e-08, 0.427881, 0.147579, 1, 0.027451, 0.854902, 0.854902, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1le6v"]
+gradient = SubResource("Gradient_w1la0")
+
+[sub_resource type="Curve" id="Curve_htiur"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_x3su8"]
+curve = SubResource("Curve_htiur")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_67t1u"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 25.0
+initial_velocity_max = 75.0
+gravity = Vector3(0, -90, 0)
+scale_min = 0.0
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_x3su8")
+color_ramp = SubResource("GradientTexture1D_1le6v")
+turbulence_enabled = true
+turbulence_noise_scale = 1.122
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hov8y"]
+radius = 1.0
+height = 8.0
+
+[sub_resource type="Animation" id="Animation_v1hrn"]
+resource_name = "animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(10, 10), Vector2(10, 12), Vector2(10, 10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xmcye"]
+_data = {
+"animation": SubResource("Animation_v1hrn")
+}
+
+[node name="tree_liltalmid" type="Area2D"]
+modulate = Color(0.6, 1, 0.580392, 1)
+script = ExtResource("1_hrqa3")
+
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="."]
+position = Vector2(10, 10)
+scale = Vector2(0.155, 0.155)
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_67t1u")
+
+[node name="GPUParticles2D6" type="GPUParticles2D" parent="."]
+position = Vector2(10, 13)
+scale = Vector2(0.155, 0.155)
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_67t1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 10)
+shape = SubResource("CapsuleShape2D_hov8y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10, 10)
+scale = Vector2(0.104167, 0.125)
+texture = ExtResource("2_ays4y")
+region_enabled = true
+region_rect = Rect2(7, 0, 48, 64)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xmcye")
+}
+autoplay = "animation"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

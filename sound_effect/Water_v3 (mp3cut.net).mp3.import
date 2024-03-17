@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dscxc1otchxmw"
+path="res://.godot/imported/Water_v3 (mp3cut.net).mp3-bbbf782dd0e575da4d70a53bfa4bb05f.mp3str"
+
+[deps]
+
+source_file="res://sound_effect/Water_v3 (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/Water_v3 (mp3cut.net).mp3-bbbf782dd0e575da4d70a53bfa4bb05f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

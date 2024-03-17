@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://brxn64y6lrba3"]
+
+[ext_resource type="Texture2D" uid="uid://ksyi66hnvbqk" path="res://Pixel Adventure 1/Free/Other/Dust Particle.png" id="1_0vav1"]
+[ext_resource type="Script" path="res://tankiz/dust.gd" id="5_srkdw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf10c"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"dust",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_ai6yf"]
+resource_name = "banich"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ebbut"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7oqwq"]
+_data = {
+"RESET": SubResource("Animation_ebbut"),
+"banich": SubResource("Animation_ai6yf")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gmobf"]
+particle_flag_disable_z = true
+radial_velocity_min = 10.0
+radial_velocity_max = 10.0
+gravity = Vector3(0, 50, 0)
+
+[node name="dust" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_yf10c")
+animation = &"dust"
+autoplay = "dust"
+frame_progress = 1.0
+script = ExtResource("5_srkdw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7oqwq")
+}
+autoplay = "banich"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, -1)
+emitting = false
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_gmobf")
+texture = ExtResource("1_0vav1")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
