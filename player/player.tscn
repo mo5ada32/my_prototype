@@ -1,6 +1,7 @@
-[gd_scene load_steps=53 format=3 uid="uid://d1rch82rkecw7"]
+[gd_scene load_steps=60 format=3 uid="uid://d1rch82rkecw7"]
 
 [ext_resource type="Script" path="res://player/player2.gd" id="1_a0wwx"]
+[ext_resource type="Resource" uid="uid://cql7a5euhlmb" path="res://player/playermovementfaster.tres" id="2_nefrm"]
 [ext_resource type="Texture2D" uid="uid://clkanv3qchl1y" path="res://player/Double Jump (32x32).png" id="2_q7ayt"]
 [ext_resource type="Texture2D" uid="uid://dw6e80lyturkc" path="res://player/Fall (32x32).png" id="2_r0cuw"]
 [ext_resource type="Texture2D" uid="uid://cvnveqvab1m5v" path="res://player/Idle (32x32).png" id="3_66l51"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dco5fkcnh7kxv" path="res://player/Jump (32x32).png" id="4_4vbvp"]
 [ext_resource type="Texture2D" uid="uid://gpx2fb63gijw" path="res://player/Hit (32x32).png" id="4_w5n8m"]
 [ext_resource type="Texture2D" uid="uid://d3dx387apjmsy" path="res://player/Run (32x32).png" id="5_wrqyi"]
+[ext_resource type="Texture2D" uid="uid://c04kupd0r663u" path="res://player/Wall Jump (32x32).png" id="9_34q6a"]
 
 [sub_resource type="Animation" id="Animation_xjf0l"]
 resource_name = "fall"
@@ -223,6 +225,26 @@ region = Rect2(320, 0, 32, 32)
 atlas = ExtResource("5_wrqyi")
 region = Rect2(352, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7bwn"]
+atlas = ExtResource("9_34q6a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c526y"]
+atlas = ExtResource("9_34q6a")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgph4"]
+atlas = ExtResource("9_34q6a")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlp8t"]
+atlas = ExtResource("9_34q6a")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gba1"]
+atlas = ExtResource("9_34q6a")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_82dss"]
 animations = [{
 "frames": [{
@@ -368,6 +390,26 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7bwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c526y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgph4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlp8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gba1")
+}],
+"loop": true,
+"name": &"wall_jumb",
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jy5ku"]
@@ -380,6 +422,7 @@ height = 12.0
 [node name="player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(284, 473)
 script = ExtResource("1_a0wwx")
+movement_data = ExtResource("2_nefrm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -395,8 +438,8 @@ zoom = Vector2(2.725, 2.725)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["player"]]
 position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_82dss")
-animation = &"fall"
-frame_progress = 0.0974714
+animation = &"wall_jumb"
+frame_progress = 0.496321
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 1)

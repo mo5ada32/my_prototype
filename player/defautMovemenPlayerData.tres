@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="playermovement" load_steps=2 format=3 uid="uid://5i487gjqs3ui"]
+
+[ext_resource type="Script" path="res://player/movement_player.gd" id="1_nctlv"]
+
+[resource]
+script = ExtResource("1_nctlv")
+speed = 200
+jumb_power = -400
+acc = 1000
+friction = 1000
+gravity = 1
+max_jumb = 2
+air_resistance = 200.0
+air_acceration = 400.0

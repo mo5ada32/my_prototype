@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="playermovement" load_steps=2 format=3 uid="uid://cql7a5euhlmb"]
+
+[ext_resource type="Script" path="res://player/movement_player.gd" id="1_3vuc1"]
+
+[resource]
+script = ExtResource("1_3vuc1")
+speed = 1000
+jumb_power = -900
+acc = 50
+friction = 70
+gravity = 100
+max_jumb = 2
